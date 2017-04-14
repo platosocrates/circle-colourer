@@ -1,11 +1,12 @@
-# Circle colourer
-
-- Approx. completion time: **1 hour**
-- Deliverables: **1 HTML file, 1 CSS file, 1 JS file**
-
+---
+summary: 'Use Javascript form events to adjust the background colour of a circle on the screen.'
+time: '1 hour'
+deliverables: '1 HTML file, 1 CSS file, 1 JS file'
 ---
 
-**Use Javascript form events to adjust the background colour of a circle on the screen.**
+# Circle colourer
+
+## Overview
 
 - *Fork this repository.*
 - Make a `<form>` tag with an `<input>` inside it—use `type="color"` for the input.
@@ -24,9 +25,8 @@ Create the interaction shown in the linked video.
 
 ## Hand in
 
-Drop this folder into your Markbot application. Make sure to fix all the errors. And submit to Canvas using Markbot.
+Drop this folder into your Markbot application. Make sure to fix all the errors. And submit online.
 
----
 ---
 
 ## Optional challenges

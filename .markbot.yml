@@ -1,35 +1,39 @@
-repo: "circle-colourer"
-canvasCourse: "467503"
-canvasAssignment: "4202553"
+repo: 'circle-colourer'
 
 naming: true
-commits: 2
+restrictFileTypes: true
+liveWebsite: true
+
+git:
+  numCommits: 2
+  allCommitted: true
+  allSynced: true
 
 html:
-  - path: "index.html"
+  - path: 'index.html'
     valid: true
     bestPractices: true
     has:
-      - "script"
-      - "form"
-      - "form label[for]"
+      - 'script[src*="jquery"]'
+      - 'script[src="js/main.js"]'
+      - 'form'
+      - 'form label[for]'
       - 'form input[type="color"]'
-    search:
-      - "jquery"
 
 css:
   - path: "css/main.css"
     valid: true
     bestPractices: true
     has:
-      - ['html', 'box-sizing', 'border-box']
+      - ['html', 'box-sizing', 'border-box', 'The `border-box` layout model is needed for this assignment—use the `borderbox` snippet']
+      - ['*', 'box-sizing', 'inherit', 'The `border-box` layout model is needed for this assignment—use the `borderbox` snippet']
       - ['.ball', 'position', 'absolute']
       - ['.ball', 'width', '100px']
       - ['.ball', 'height', '100px']
       - ['.ball', 'border-radius', '50px']
 
 js:
-  - path: "js/main.js"
+  - path: 'js/main.js'
     valid: true
     bestPractices: true
     search:
@@ -38,3 +42,18 @@ js:
       - "\\$\\('.ball'\\)"
       - "\\$\\('form'\\)"
       - "\\.val\\("
+
+functionality:
+  - path: 'index.html'
+    tests:
+      - |
+        let ball = $('.ball');
+        let currentColor = css(ball).backgroundColor;
+        let input = $('input[type="color"]');
+
+        input.value = '#fba597';
+        input.dispatchEvent(ev('change'));
+
+        if (currentColor == css(ball).backgroundColor) fail('The `background-color` of the ball doesn’t change when a new colour is selected from the `<input>`');
+
+        pass();
